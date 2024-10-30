@@ -8,7 +8,11 @@ require('./config/mongoDBconfig')()
 const app=express(); 
 
 const port=process.env.port || 8000
-app.use(cors())
+app.use(cors(
+    {
+        origin:["http://localhost:5173","https://e-commerce-f3rt.onrender.com" ]
+    }
+))
 app.use(express.json())
 app.use(express.urlencoded())  
 app.use('/',authRoute)
