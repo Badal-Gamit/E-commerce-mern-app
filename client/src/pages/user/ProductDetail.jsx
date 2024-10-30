@@ -17,7 +17,7 @@ const ProductDetail = () => {
 useEffect(() => {
   if (detail) {
     try {
-        axios.get(`http://localhost:8000/product-one/${detail}`).then(({data})=>{setproduct(data.product); return data.product} ).then((data)=>{ fetchSimilarProduct(data?.category?._id ,data?._id) })
+        axios.get(`https://e-commerce-mern-app-t2gp.onrender.com/product-one/${detail}`).then(({data})=>{setproduct(data.product); return data.product} ).then((data)=>{ fetchSimilarProduct(data?.category?._id ,data?._id) })
     } catch (error) {
        console.log(error.message)
     }
@@ -29,7 +29,7 @@ const fetchSimilarProduct=(category,productid)=>{
         const cid=category
         const pid=productid
        
-        axios.get(`http://localhost:8000/related-product/${cid}/${pid}`).then(({data})=>{setRelatedProduct(data?.product)})
+        axios.get(`https://e-commerce-mern-app-t2gp.onrender.com/related-product/${cid}/${pid}`).then(({data})=>{setRelatedProduct(data?.product)})
     } catch (error) {
          console.log(error.message)
     }
@@ -40,7 +40,7 @@ const fetchSimilarProduct=(category,productid)=>{
         <div  className='grid grid-cols-5 pt-8' >
          <div className='col-span-2' >
          <div >
-                <img className="p-8 rounded-t-lg w-3/4" alt=''src={`http://localhost:8000/product-image/${product._id}`} />
+                <img className="p-8 rounded-t-lg w-3/4" alt=''src={`https://e-commerce-mern-app-t2gp.onrender.com/product-image/${product._id}`} />
             </div>
          </div>
          <div className='col-span-3' >
@@ -65,7 +65,7 @@ const fetchSimilarProduct=(category,productid)=>{
  return    <div key={i._id} className="w-full max-w-64 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
  <NavLink to={`/product/${i._id}`} >
 <div className='transition-transform duration-300 ease-in-out  hover:scale-105 hover:brightness-95 ' >
-    <img className=" rounded-t-lg" alt=''src={`http://localhost:8000/product-image/${i._id}`} />
+    <img className=" rounded-t-lg" alt=''src={`https://e-commerce-mern-app-t2gp.onrender.com/product-image/${i._id}`} />
 </div>
 </NavLink>
 <div className="px-5 pb-5 bg-slate-100 "> 

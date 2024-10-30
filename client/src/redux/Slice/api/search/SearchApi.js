@@ -4,7 +4,7 @@ import axios from 'axios'
 export  const SearchApi=createAsyncThunk(
     'SearchApi',
     async(search)=>{
-       const {data}=await axios.get(`http://localhost:8000/product/search/${search}`)
+       const {data}=await axios.get(`https://e-commerce-mern-app-t2gp.onrender.com/product/search/${search}`)
        return data
     }
 )

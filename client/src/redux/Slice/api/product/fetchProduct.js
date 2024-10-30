@@ -6,7 +6,7 @@ export const getProducts=createAsyncThunk(
     'getProducts',
     async()=>{
        try {
-        const{data,status} = await  axios.get('http://localhost:8000/product');
+        const{data,status} = await  axios.get('https://e-commerce-mern-app-t2gp.onrender.com/product');
          return data
        } catch (error) {
           toast.error(error.message);

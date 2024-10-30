@@ -27,7 +27,7 @@ const ResetPassword = () => {
      <div className=' max-w-md mx-auto p-3  border-2bg-white shadow-lg '>
      <h2 className="text-2xl font-bold mb-4">Login</h2>
      <form  onSubmit={submitHandle}>
-          {/* Name Field */}
+      
           <div className="mb-4 ">
             <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">Email</label>
             <input

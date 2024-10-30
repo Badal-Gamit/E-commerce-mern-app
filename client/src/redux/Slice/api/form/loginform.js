@@ -7,7 +7,7 @@ export const signIn=createAsyncThunk(
     'form/signIn',
     async(form)=>{
      try {
-        const {status,data} = await axios.post('http://localhost:8000/login',form)
+        const {status,data} = await axios.post('https://e-commerce-mern-app-t2gp.onrender.com/login',form)
          switch (status) {
                 case 200:
                     toast.success(data.message)

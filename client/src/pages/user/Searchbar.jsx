@@ -12,7 +12,7 @@ const Searchbar = () => {
 return    <div key={product._id} className="w-full max-w-64 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 <NavLink to={`/product/${product._id}`} >
 <div className='transition-transform duration-300 ease-in-out  hover:scale-105 hover:brightness-95 ' >
-   <img className=" rounded-t-lg" alt=''src={`http://localhost:8000/product-image/${product._id}`} />
+   <img className=" rounded-t-lg" alt=''src={`https://e-commerce-mern-app-t2gp.onrender.com/product-image/${product._id}`} />
 </div>
 </NavLink>
 <div className="px-5 pb-5 bg-slate-100 "> 

@@ -25,7 +25,7 @@ try {
          const  userToken=JSON.parse(Token)
          const header={headers: {
            'Authorization':  userToken?.user?`Bearer ${userToken.token}`:"" }}
- const {status,data }= await axios.post(`http://localhost:8000/user/update`,form,header)
+ const {status,data }= await axios.post(`https://e-commerce-mern-app-t2gp.onrender.com/user/update`,form,header)
   if (status==200) {
     localStorage.setItem('data',JSON.stringify(data))
     toast.success(data.message)

@@ -36,7 +36,7 @@ useEffect(() => {
 
 useEffect(() => {
   if (token) {
-    axios.get('http://localhost:8000/braintree/token').then((response)=>{setClienttoken(response.data.clientToken)}).catch((err)=>{console.log(err) })
+    axios.get('https://e-commerce-mern-app-t2gp.onrender.com/braintree/token').then((response)=>{setClienttoken(response.data.clientToken)}).catch((err)=>{console.log(err) })
   }  
 }, [token])
 useEffect(() => {
@@ -67,7 +67,7 @@ instance.requestPaymentMethod(async(err,payload)=>{
          const header={headers: {
            'Authorization':  userToken?.user?`Bearer ${userToken.token}`:"" }}
            setloading(true)
-         const {data} = await   axios.post(`http://localhost:8000/braintree/payment/${user._id}`,{cart:Card,nounce:payload.nonce},header)
+         const {data} = await   axios.post(`https://e-commerce-mern-app-t2gp.onrender.com/braintree/payment/${user._id}`,{cart:Card,nounce:payload.nonce},header)
           
              setloading(false);
              toast.success('Payment  Complete Sucessfully')
@@ -115,7 +115,7 @@ const TotalPrice=()=>{
             Card.map((product,i)=>{
         return     <div  className='flex gap-5 border-2 border-black items-center' key={(product._id+i)} >
                 <div  >
-                <img className="rounded-t-lg " alt=''src={`http://localhost:8000/product-image/${product._id}`} />
+                <img className="rounded-t-lg " alt=''src={`https://e-commerce-mern-app-t2gp.onrender.com/product-image/${product._id}`} />
             </div> 
             <div className='mx-2' >
                 <div className='text-lg my-2 ' ><strong>name:</strong>  {product.name } </div>

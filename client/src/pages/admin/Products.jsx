@@ -16,10 +16,10 @@ useEffect(() => {
 
   return (
     <div className='flex gap-5 flex-wrap pt-5' >
- {products.map((product)=>{
+ {products.length>0 ?products.map((product)=>{
    return    <div key={product._id} className="w-full max-w-64 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
   <div className='transition-transform duration-300 ease-in-out  hover:scale-105 hover:brightness-95 ' >
-      <img className=" rounded-t-lg" alt=''src={`http://localhost:8000/product-image/${product._id}`} />
+      <img className=" rounded-t-lg" alt=''src={`https://e-commerce-mern-app-t2gp.onrender.com/product-image/${product._id}`} />
   </div>
  
   <div className="px-5 pb-5 bg-slate-100 "> 
@@ -37,7 +37,16 @@ useEffect(() => {
  
 </div>
      
-     }) }
+     }):<div  className='w-full flex  h-60 gap-5 justify-center items-center' > 
+   <span className="loading loading-spinner text-primary"></span>
+<span className="loading loading-spinner text-secondary"></span>
+<span className="loading loading-spinner text-accent"></span>
+<span className="loading loading-spinner text-neutral"></span>
+<span className="loading loading-spinner text-info"></span>
+<span className="loading loading-spinner text-success"></span>
+<span className="loading loading-spinner text-warning"></span>
+<span className="loading loading-spinner text-error"></span>
+     </div> }
    </div>
   )
 }

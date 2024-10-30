@@ -5,7 +5,7 @@ export const getCategory=createAsyncThunk(
     'fetch-Category',
     async()=>{
         try {
-            const {status,data}=await  axios.get('http://localhost:8000/categorys');
+            const {status,data}=await  axios.get('https://e-commerce-mern-app-t2gp.onrender.com/categorys');
 
               if (status==200) {
               return  data.getcatory
@@ -26,7 +26,7 @@ export const deleteCategoryApi=createAsyncThunk(
           const header={headers: {
             'Authorization':  userToken?.user?.role===1?`Bearer ${userToken.token}`:""
           }}
-       const{data}=await axios.delete(`http://localhost:8000/category/${id}`,header)
+       const{data}=await axios.delete(`https://e-commerce-mern-app-t2gp.onrender.com/category/${id}`,header)
         toast.success(data.message)
         return id ;
       }catch (error) {

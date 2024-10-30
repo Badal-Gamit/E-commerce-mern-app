@@ -13,7 +13,7 @@ useEffect(() => {
          const  userToken=JSON.parse(Token)
          const header={headers: {
            'Authorization':  userToken?.user?.role===1?`Bearer ${userToken.token}`:"", }} 
-axios.get(`http://localhost:8000/user/All-order`,header).then(({data})=>{ console.log(data)  ;setorder(data.orderlist)}).catch((err)=>{console.log(err) })
+axios.get(`https://e-commerce-mern-app-t2gp.onrender.com/user/All-order`,header).then(({data})=>{ console.log(data)  ;setorder(data.orderlist)}).catch((err)=>{console.log(err) })
 }, [])
 
 const ProcessHandle=(e)=>{
@@ -22,7 +22,7 @@ const ProcessHandle=(e)=>{
   const  userToken=JSON.parse(Token)
   const header={headers: {
     'Authorization':  userToken?.user?.role===1?`Bearer ${userToken.token}`:"", }} 
-    axios.patch(`http://localhost:8000/order/status`,{id:id,status:value},header).
+    axios.patch(`https://e-commerce-mern-app-t2gp.onrender.com/order/status`,{id:id,status:value},header).
     then(({data,status})=>{
    if (status==200) {
        toast.success(data.message)
@@ -33,7 +33,7 @@ const ProcessHandle=(e)=>{
 }
 return (
   <div   >
-  <div > {order?.map((o,i)=>{
+  <div > {order.length>0?order?.map((o,i)=>{
   return  <div className="relative overflow-x-auto shadow-md sm:rounded-lg" key={o._id} >
       <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -96,7 +96,7 @@ return (
       {o?.products?.map((product)=>{
     return  <div  className='flex gap-5 border-2 border-black items-center' key={product._id} >
     <div  >
-    <img className="rounded-t-lg " alt=''src={`http://localhost:8000/product-image/${product._id}`} />
+    <img className="rounded-t-lg " alt=''src={`https://e-commerce-mern-app-t2gp.onrender.com/product-image/${product._id}`} />
 </div> 
 <div className='mx-2' >
     <div className='text-lg my-2 ' ><strong>name:</strong>  {product.name } </div>
@@ -107,8 +107,18 @@ return (
  </div>
  </div>}) }
   </div>
-  }) } </div>
-     {console.log(order)}
+  }): <div  className='w-full flex  h-60 gap-5 justify-center items-center' > <span className="loading loading-dots loading-xs"></span>
+  <span className="loading loading-dots loading-sm"></span>
+  <span className="loading loading-dots loading-md"></span>
+  <span className="loading loading-dots loading-lg"></span>
+  <span className="loading loading-dots loading-sm"></span>
+  <span className="loading loading-dots loading-md"></span>
+  <span className="loading loading-dots loading-lg"></span>
+  <span className="loading loading-dots loading-sm"></span>
+  <span className="loading loading-dots loading-md"></span>
+  <span className="loading loading-dots loading-lg"></span>
+  </div>  } </div>
+    
 </div>
 )
 }

@@ -8,13 +8,13 @@ const Order = () => {
 useEffect(() => {
   const tokenId=localStorage.getItem('data')
    const{token,user}=JSON.parse(tokenId)
-   if (user) axios.get(`http://localhost:8000/user/order/${user._id}`).then(({data})=>{setorder(data.order)}).catch((err)=>{console.log(err) })
+   if (user) axios.get(`https://e-commerce-mern-app-t2gp.onrender.com/user/order/${user._id}`).then(({data})=>{setorder(data.order)}).catch((err)=>{console.log(err) })
 }, [localStorage.getItem('data')])
 
 
   return (
     <div  className='mt-10' >
-    <div > {order?.map((o,i)=>{
+    <div > {order.length<0?order?.map((o,i)=>{
     return  <div className="relative overflow-x-auto shadow-md sm:rounded-lg" key={o._id} >
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -66,7 +66,7 @@ useEffect(() => {
         {o?.products?.map((product)=>{
       return  <div  className='flex gap-5 border-2 border-black items-center' key={product._id} >
       <div  >
-      <img className="rounded-t-lg " alt=''src={`http://localhost:8000/product-image/${product._id}`} />
+      <img className="rounded-t-lg " alt=''src={`https://e-commerce-mern-app-t2gp.onrender.com/product-image/${product._id}`} />
   </div> 
   <div className='mx-2' >
       <div className='text-lg my-2 ' ><strong>name:</strong>  {product.name } </div>
@@ -77,7 +77,20 @@ useEffect(() => {
    </div>
    </div>}) }
     </div>
-    }) } </div>
+    }):<div  className='w-full flex  h-60 gap-5 justify-center items-center' > 
+    <span className="loading loading-ball loading-xs"></span>
+<span className="loading loading-ball loading-sm"></span>
+<span className="loading loading-ball loading-md"></span>
+<span className="loading loading-ball loading-lg"></span>
+<span className="loading loading-ball loading-xs"></span>
+<span className="loading loading-ball loading-sm"></span>
+<span className="loading loading-ball loading-md"></span>
+<span className="loading loading-ball loading-lg"></span>
+<span className="loading loading-ball loading-xs"></span>
+<span className="loading loading-ball loading-sm"></span>
+<span className="loading loading-ball loading-md"></span>
+<span className="loading loading-ball loading-lg"></span>
+      </div> } </div>
       
 </div>
   )

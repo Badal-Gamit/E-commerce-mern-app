@@ -37,7 +37,7 @@ if (checked.length!=0 || selectRange.length!=0) {
             
      const body={checked,selectRange}
       console.log(checked)
-   const {data}= await  axios.post('http://localhost:8000/products/filter',body)
+   const {data}= await  axios.post('https://e-commerce-mern-app-t2gp.onrender.com/products/filter',body)
     console.log(data)
   setproducts(data?.product)
  }
@@ -105,11 +105,11 @@ const  priceHandle=(p)=>{
       </div>
     <div className='col-span-4' ><h1 className='my-3 text-center text-4xl font-semibold ' >All Product</h1>
        <div className='flex gap-4 flex-wrap' >
-        {Products.map((product)=>{
+        {Products.length>0?Products.map((product)=>{
          return    <div key={product._id} className="w-full max-w-64 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
              <NavLink to={`product/${product._id}`} >
             <div className='transition-transform duration-300 ease-in-out  hover:scale-105 hover:brightness-95 ' >
-                <img className=" rounded-t-lg" alt=''src={`http://localhost:8000/product-image/${product._id}`} />
+                <img className=" rounded-t-lg" alt=''src={`https://e-commerce-mern-app-t2gp.onrender.com/product-image/${product._id}`} />
             </div>
             </NavLink>
             <div className="px-5 pb-5 bg-slate-100 "> 
@@ -128,7 +128,7 @@ const  priceHandle=(p)=>{
             </div>
            
         </div>
-      }) }   
+      }): <div  className='flex justify-center w-full' ><span className="loading loading-bars loading-lg "></span></div>}   
         </div>
         
       </div>

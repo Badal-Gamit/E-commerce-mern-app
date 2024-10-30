@@ -61,7 +61,7 @@ useEffect(() => {
           >
           {data===true?"loading...":"Submit"}
           </button>
-          {console.log(data) }
+        
           </div>
           </form>
      </div>

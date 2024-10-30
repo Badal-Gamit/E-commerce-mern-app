@@ -14,7 +14,7 @@ export const createProductApi=createAsyncThunk(
            'Authorization':  userToken?.user?.role===1?`Bearer ${userToken.token}`:"",
            "Content-Type": "multipart/form-data"
          }}
-      const {data}= await axios.post(`http://localhost:8000/product`,Data,header)
+      const {data}= await axios.post(`https://e-commerce-mern-app-t2gp.onrender.com/product`,Data,header)
         toast.success(data.message)
          return data;
         } catch (error) {

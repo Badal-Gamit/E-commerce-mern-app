@@ -6,7 +6,7 @@ export const registrationform=createAsyncThunk(
     'registrationform',
     async(form)=>{
         try {
-            const {status,data}=await axios.post('http://localhost:8000/register',form)
+            const {status,data}=await axios.post('https://e-commerce-mern-app-t2gp.onrender.com/register',form)
              switch (status) {
               case 200:
                    toast.success( data.message)

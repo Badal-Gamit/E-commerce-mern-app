@@ -16,6 +16,7 @@ app.use('/',categoryRoutes)
 app.use('/',productRoutes)
 
 
+
 app.listen(port,()=>{
     console.log(`server is running on ${port} port`);
     })

@@ -28,7 +28,7 @@ const submitHandle=async(e)=>{
     const header={headers: {
       'Authorization':  userToken?.user?.role===1?`Bearer ${userToken.token}`:""
     }}
- const {status,data}=await  axios.post('http://localhost:8000/category',name,header)
+ const {status,data}=await  axios.post('https://e-commerce-mern-app-t2gp.onrender.com/category',name,header)
  setname({})
  switch (true) {
   case status==200:
@@ -52,7 +52,7 @@ const   updateHandle=async(e)=>{
       const header={headers: {
         'Authorization':  userToken?.user?.role===1?`Bearer ${userToken.token}`:""
       }}
-    const {data}= await  axios.patch(`http://localhost:8000/category/${id}`,name,header);
+    const {data}= await  axios.patch(`https://e-commerce-mern-app-t2gp.onrender.com/category/${id}`,name,header);
     setisUpdate(false)
     setid('');
     categoryCall();
@@ -75,7 +75,7 @@ const DeleteHandle=async({target})=>{
 //     const header={headers: {
 //       'Authorization':  userToken?.user?.role===1?`Bearer ${userToken.token}`:""
 //     }}
-//  const{data}=await axios.delete(`http://localhost:8000/category/${target.id}`,header)
+//  const{data}=await axios.delete(`https://e-commerce-mern-app-t2gp.onrender.com/category/${target.id}`,header)
 //  toast.success(data.message)
 // }catch (error) {
 // toast.error(error.message)

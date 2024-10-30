@@ -6,7 +6,7 @@ export const passwordReset=createAsyncThunk(
     'passwordRest',
     async(form)=>{
         try {
-            const {status,data} = await axios.post('http://localhost:8000/reset-password', form)
+            const {status,data} = await axios.post('https://e-commerce-mern-app-t2gp.onrender.com/reset-password', form)
             switch (status) {
                 case 200:
                     toast.success(data.message)

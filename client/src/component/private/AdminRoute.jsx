@@ -12,7 +12,7 @@ useEffect(() => {
       'Authorization':  userToken?.user?.role===1?`Bearer ${userToken.token}`:""
     }}
   
-axios.get('http://localhost:8000/dashboard/admin',header).then(({data})=>{ console.log(data.message); data.message=="ok"?setverify(true):setverify(false) })
+axios.get('https://e-commerce-mern-app-t2gp.onrender.com/dashboard/admin',header).then(({data})=>{ console.log(data.message); data.message=="ok"?setverify(true):setverify(false) })
 }, [])
 
 return verify?<Outlet/>:<Spinner/>

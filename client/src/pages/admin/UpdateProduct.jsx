@@ -28,7 +28,7 @@ const handleupdate=async(e)=>{
   e.preventDefault()
   console.log(Product)
   try {
-   const {data}= await axios.patch(`http://localhost:8000/product-update/${params.id}`,Product,{headers:{ "Content-Type": "multipart/form-data"} })
+   const {data}= await axios.patch(`https://e-commerce-mern-app-t2gp.onrender.com/product-update/${params.id}`,Product,{headers:{ "Content-Type": "multipart/form-data"} })
      navigation("/dashboard/admin/products")
      } catch (error) {
     toast.error(error.message)
@@ -39,7 +39,7 @@ const deleteHandle=async(event)=>{
     event.preventDefault()
     console.log(event.target.id)
     try {
-     const {data}= axios.delete(`http://localhost:8000/product/${event.target.id}`)
+     const {data}= axios.delete(`https://e-commerce-mern-app-t2gp.onrender.com/product/${event.target.id}`)
         navigation(`/dashboard/admin/products`)
     } catch (error) {
       console.log(error)
@@ -51,10 +51,10 @@ useEffect(() => {
     ( async()=>{
       const {id}=params
 dispatch(getCategory());
- const {data}= await  axios.get(`http://localhost:8000/product-one/${id}`)
+ const {data}= await  axios.get(`https://e-commerce-mern-app-t2gp.onrender.com/product-one/${id}`)
  setProduct(data.product)
- const  response= await  axios.get(`http://localhost:8000/product-image/${id}`)
- const Url=`http://localhost:8000/product-image/${params.id}`
+ const  response= await  axios.get(`https://e-commerce-mern-app-t2gp.onrender.com/product-image/${id}`)
+ const Url=`https://e-commerce-mern-app-t2gp.onrender.com/product-image/${params.id}`
 setSelectedImage(Url)
 })()
 }, [])
