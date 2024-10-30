@@ -43,7 +43,7 @@ try {
        <div className="max-w-md mx-auto  p-2 bg-white shadow-lg rounded-lg ">
         <h2 className="text-2xl font-bold mb-4">update profile</h2>
         <form  onSubmit={submitHandle}>
-          {/* Name Field */}
+     
           <div className="mb-4">
             <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">Name</label>
             <input
@@ -55,7 +55,7 @@ try {
               required
               onChange={changeHandle} value={form.name?form.name:""}   />
           </div>
-          {/* Email Field */}
+         
           <div className="mb-4">
             <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">Email</label>
             <input
@@ -67,8 +67,7 @@ try {
               required
               onChange={changeHandle} value={form.email?form.email:""}   disabled  />
           </div>
-            
-          {/* Address Field */}
+     
           <div className="mb-4">
             <label htmlFor="address" className="block text-gray-700 font-semibold mb-2">Address</label>
             <input
@@ -83,7 +82,6 @@ try {
 
           {console.log(form) }
 
-          {/* Phone Number Field */}
           <div className="mb-4">
             <label htmlFor="phone" className="block text-gray-700 font-semibold mb-2">Phone Number</label>
             <input
@@ -95,7 +93,7 @@ try {
               required
               onChange={changeHandle} value={form.phoneNumber?form.phoneNumber:""}  />
           </div>
-          {/* Password Field */}
+        
           <div className="mb-4">
             <label htmlFor="password" className="block text-gray-700 font-semibold mb-2">Password</label>
             <input
@@ -108,7 +106,7 @@ try {
               onChange={changeHandle} value={form.password?form.password:""}  />
           </div>
 
-          {/* Submit Button */}
+     
           <button
             type="submit"
             className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:bg-blue-700"

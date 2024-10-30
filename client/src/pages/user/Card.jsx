@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react'
-import Layout from '../../component/layout/layout'
+import Layout from '../../component/layout/Layout'
 import { useSelector,useDispatch } from 'react-redux'
 import { itemRemove,AddCart,clearCart } from '../../redux/Slice/feature/Card'
 import { useNavigate } from 'react-router-dom'

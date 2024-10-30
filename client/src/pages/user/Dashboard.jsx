@@ -1,6 +1,6 @@
 import React from 'react'
 import MenuBar from '../../component/user/MenuBar'
-import Layout from '../../component/layout/layout'
+import Layout from '../../component/layout/Layout'
 import { Outlet } from 'react-router-dom'
 
 const Dashboard = () => {

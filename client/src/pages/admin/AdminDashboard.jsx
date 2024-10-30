@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../../component/layout/layout'
+import Layout from '../../component/layout/Layout'
 import Sidebar from '../../component/Admin/Sidebar'
 import { Outlet } from 'react-router-dom'
 const Admindashboard = () => {
