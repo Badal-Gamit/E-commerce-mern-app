@@ -10,7 +10,7 @@ const app=express();
 const port=process.env.port || 8000
 app.use(cors())
 app.use(express.json())
-app.use(express.urlencoded())
+app.use(express.urlencoded())  
 app.use('/',authRoute)
 app.use('/',categoryRoutes)
 app.use('/',productRoutes)
