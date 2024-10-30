@@ -17,7 +17,7 @@ const changeHandle=({target})=>{
 const submitHandle=async(e)=>{
   e.preventDefault()
 dispatch(registrationform(form))
-     
+  navigation('/')
 }
 
   return (
