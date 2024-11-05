@@ -1,4 +1,5 @@
 const express=require('express');
+const path=require('path')
 const authRoute=require('./routes/authRoute');
 const categoryRoutes=require('./routes/categoryRoute')
 const productRoutes=require('./routes/productRoutes')
@@ -18,8 +19,13 @@ app.use(express.urlencoded())
 app.use('/',authRoute)
 app.use('/',categoryRoutes)
 app.use('/',productRoutes)
+app.use(express.static(path.join(path.resolve(),"..","client","dist")))
 
+console.log(path.join(path.resolve(),"..","client","dist","index.html"));
 
+app.get("*",(req,res)=>{
+ res.sendFile(path.join(path.resolve(),"..","client","dist","index.html"))
+})
 
 app.listen(port,()=>{
     console.log(`server is running on ${port} port`);
