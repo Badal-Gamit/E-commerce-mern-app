@@ -11,7 +11,7 @@ const app=express();
 const port=process.env.port || 8000
 app.use(cors(
     {
-        origin:["http://localhost:5173","https://e-commerce-f3rt.onrender.com" ]
+        origin:["http://localhost:5173","https://e-commerce-f3rt.onrender.com","https://e-commerce-app-xyzzzz.netlify.app"]
     }
 ))
 app.use(express.json())
@@ -19,13 +19,11 @@ app.use(express.urlencoded())
 app.use('/',authRoute)
 app.use('/',categoryRoutes)
 app.use('/',productRoutes)
-app.use(express.static(path.join(path.resolve(),"..","client","dist")))
+
 
 console.log(path.join(path.resolve(),"..","client","dist","index.html"));
 
-app.get("*",(req,res)=>{
- res.sendFile(path.join(path.resolve(),"..","client","dist","index.html"))
-})
+
 
 app.listen(port,()=>{
     console.log(`server is running on ${port} port`);
